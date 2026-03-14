@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Voices of The Limen</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Source+Serif+4:wght@400;600&display=swap');
+:root{--bg:#1a1a1a;--panel:#242424;--border:#333;--gold:#c5a55a;--cream:#faf6ee;--red:#8b1a1a;--text:#e0d8c8;--muted:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text)}
+.hdr{background:var(--panel);border-bottom:2px solid var(--red);padding:12px 30px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.hdr h1{font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.btn{font-family:'Oswald',sans-serif;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:10px 25px;cursor:pointer;transition:all .2s;border:1px solid var(--gold)}
+.btn-p{background:var(--red);color:var(--cream);border-color:var(--red)}.btn-p:hover{background:#a52a2a}
+.btn-s{background:transparent;color:var(--gold)}.btn-s:hover{background:var(--gold);color:var(--bg)}
+.tabs{background:var(--panel);border-bottom:1px solid var(--border);padding:0 30px;display:flex;overflow-x:auto}
+.tabs button{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;background:none;border:none;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+.tabs button:hover{color:var(--text)}.tabs button.on{color:var(--gold);border-bottom-color:var(--gold)}
+.wrap{max-width:850px;margin:0 auto;padding:30px 20px 80px}
+.sec{display:none}.sec.on{display:block}
+.sec h2{font-family:'Oswald',sans-serif;font-size:24px;letter-spacing:3px;color:var(--gold);margin-bottom:25px;text-transform:uppercase}
+.fg{margin-bottom:22px}.fg label{display:block;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.fg input,.fg textarea{width:100%;padding:10px 12px;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:'Source Serif 4',serif;font-size:15px;line-height:1.6}
+.fg input:focus,.fg textarea:focus{outline:none;border-color:var(--gold)}.fg textarea{min-height:100px;resize:vertical}
+.dv{height:1px;background:var(--border);margin:30px 0}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:15px}.pi{background:var(--panel);padding:12px;border:1px solid var(--border)}
+.pi h4{font-family:'Oswald',sans-serif;font-size:13px;color:var(--gold);margin-bottom:8px}
+.pi input{width:100%;padding:6px 8px;background:var(--bg);border:1px solid var(--border);color:var(--text);font-size:13px;margin-bottom:5px}.pi input:focus{outline:none;border-color:var(--gold)}
+.sb{position:fixed;bottom:0;left:0;right:0;background:var(--panel);border-top:1px solid var(--border);padding:8px 30px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+.sm{color:var(--gold);opacity:0;transition:opacity .3s}.sm.on{opacity:1}
+@media(max-width:700px){.pg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="hdr"><h1>VotL Admin</h1><div style="display:flex;gap:8px"><button class="btn btn-s" onclick="saveDraft()">Save Draft</button><button class="btn btn-p" onclick="downloadSite()">Download HTML Files</button></div></div>
+<div class="tabs">
+<button class="on" onclick="show('home',this)">Home</button>
+<button onclick="show('mc',this)">Maxima Carta</button>
+<button onclick="show('wk',this)">Works</button>
+<button onclick="show('po',this)">Promotions</button>
+<button onclick="show('ab',this)">About</button>
+<button onclick="show('ct',this)">Contact</button>
+<button onclick="show('lk',this)">Links</button>
+</div>
+<div class="wrap">
+<div class="sec on" id="s-home"><h2>Home Page</h2>
+<div class="fg"><label>Site Title</label><input id="f-title" value="Voices of The Limen"></div>
+<div class="fg"><label>Subtitle</label><input id="f-sub" value="Publishing House"></div>
+<div class="fg"><label>Mission — Paragraph 1</label><textarea id="f-m1">The mission of this independent publishing house is to provide a platform for publications, strategic messaging, and protected voices for the promotion of contributors and their institutions to support the otherwise voiceless.</textarea></div>
+<div class="fg"><label>Mission — Paragraph 2</label><textarea id="f-m2">Founded on the principle that credible ideas have a right to passage across the limen, the work of this house stands at the crossroads of global democracy to promote a free world and its interests.</textarea></div>
+<div class="fg"><label>Latin Motto</label><input id="f-motto" value="PRO TE PRO NOBIS OMNIBUS"></div>
+<div class="fg"><label>Motto Translation</label><input id="f-mt" value="For you, for all of us"></div>
+</div>
+<div class="sec" id="s-mc"><h2>Maxima Carta</h2>
+<div class="fg"><label>Subtitle</label><input id="f-mcs" value="The United CommonWealth of Earth"></div>
+<div class="fg"><label>Preamble</label><textarea id="f-mcp">We the People of Earth, torchbearers of the knowledge, deeds and lives of all those who came before us, do ordain and enshrine this Maxima Carta — that all humanity may live in peace, dignity, and prosperity for all time.</textarea></div>
+<div class="fg"><label>Description</label><textarea id="f-mcd">The open-source constitutional model establishing the rights, governing authorities, military apparatus, monetary system, and cultural institutions of The United CommonWealth of Earth.</textarea></div>
+<div class="fg"><label>ISBN</label><input id="f-isbn" value="978-1-0369-5475-8"></div>
+<div class="fg"><label>License</label><input id="f-lic" value="CC BY-NC 4.0"></div>
+<div class="fg"><label>Compiler</label><input id="f-comp" value="Everyman of Sherwood"></div>
+<div class="fg"><label>Address</label><input id="f-addr" value="71-75 Shelton Street, Covent Garden, London, WC2H 9JQ"></div>
+</div>
+<div class="sec" id="s-wk"><h2>Other Works</h2>
+<div class="fg"><label>Work 1 Title</label><input id="f-w1t" value="A New Common Wealth"></div>
+<div class="fg"><label>Work 1 Status</label><input id="f-w1s" value="Coming Dec 2026"></div>
+<div class="fg"><label>Work 1 Description</label><textarea id="f-w1d"></textarea></div><div class="dv"></div>
+<div class="fg"><label>Work 2 Title</label><input id="f-w2t" value="Tactical Egalitarianism"></div>
+<div class="fg"><label>Work 2 Status</label><input id="f-w2s" value="Political Theory"></div>
+<div class="fg"><label>Work 2 Description</label><textarea id="f-w2d">The founding political theory of the publishing house — that society functions optimally when individuals see themselves as equal stakeholders within a system.</textarea></div><div class="dv"></div>
+<div class="fg"><label>Work 3 Title</label><input id="f-w3t" value="The Cries of Our Peoples"></div>
+<div class="fg"><label>Work 3 Status</label><input id="f-w3s" value="Coming 2027"></div>
+<div class="fg"><label>Work 3 Description</label><textarea id="f-w3d"></textarea></div><div class="dv"></div>
+<div class="fg"><label>Work 4 Title</label><input id="f-w4t" value="The Voices of Everyman"></div>
+<div class="fg"><label>Work 4 Status</label><input id="f-w4s" value="Coming 2028"></div>
+<div class="fg"><label>Work 4 Description</label><textarea id="f-w4d">Meet the compiler and voices behind The United CommonWealth project. In this collective biography the history of its formative thinkers is brought to light. Discover the journey that uncovered the knowledge that was hidden in our societies which later developed the foundations for the political theory of Tactical Egalitarianism.</textarea></div>
+</div>
+<div class="sec" id="s-po"><h2>Promotion Labels</h2><div class="pg" id="pf"></div></div>
+<div class="sec" id="s-ab"><h2>About Page</h2>
+<div class="fg"><label>The Limen</label><textarea id="f-lim" style="min-height:140px">In Roman architecture and religion, the limen was the threshold — the boundary stone of the doorway, sacred to the god Janus. To cross the limen was to pass from one world into another: from private to public, from known to unknown, from silence to speech.
+
+Voices of the Limen takes its name from this ancient concept. We are a publishing house that exists at the threshold — the crossing point where ideas that deserve to be heard find their passage into the world.</textarea></div>
+<div class="fg"><label>Key Quote</label><input id="f-quote" value="Credible ideas have a right to passage across the limen."></div>
+<div class="fg"><label>Tactical Egalitarianism</label><textarea id="f-te" style="min-height:140px">The School of Tactical Egalitarianism holds that society functions optimally when every individual sees themselves as an equal stakeholder in the system they inhabit. This is not a utopian ideal — it is a strategic framework.
+
+Equality of standing, equality of voice, equality of the right to shape the world. Not imposed from above but recognised from within. When people understand themselves as stakeholders rather than subjects, the systems they build are stronger, more resilient, and more just.</textarea></div>
+<div class="fg"><label>United Commonwealth</label><textarea id="f-uc">The vision of the United Commonwealth is the practical application of Tactical Egalitarianism at the civilisational level. It proposes that the democratic nations of the world — each with their own mythologies, languages, and identities — can find common cause without surrendering sovereignty.</textarea></div>
+<div class="fg"><label>Founder Signature</label><input id="f-sig" value="— Everyman of Sherwood, Founder of Voices of The Limen Publishing House"></div>
+</div>
+<div class="sec" id="s-ct"><h2>Contact</h2>
+<div class="fg"><label>Intro Text</label><textarea id="f-ci">This Publishing House welcomes voices from contributors, collaborators, institutions, and individuals who want to be heard.
+
+If you believe your voice belongs at the crossroads of global democracy, we invite you to reach out.</textarea></div>
+</div>
+<div class="sec" id="s-lk"><h2>Links</h2>
+<div class="fg"><label>Patreon URL</label><input id="f-pat" value="https://www.patreon.com/UnitedCommonWealth"></div><div class="dv"></div>
+<div class="fg"><label>Extra Link 1 Label</label><input id="f-l1n" placeholder="e.g. Twitter"></div>
+<div class="fg"><label>Extra Link 1 URL</label><input id="f-l1u" placeholder="https://..."></div><div class="dv"></div>
+<div class="fg"><label>Extra Link 2 Label</label><input id="f-l2n" placeholder="e.g. YouTube"></div>
+<div class="fg"><label>Extra Link 2 URL</label><input id="f-l2u" placeholder="https://..."></div>
+</div>
+</div>
+<div class="sb"><span>Voices of The Limen Admin</span><span class="sm" id="sm"></span></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const P=[{i:'merlin',n:'Merlin',l:'Merlin — Commonwealth',s:'Bring Your Good Deeds',r:'commonwealth'},{i:'lugh',n:'Lugh',l:'Lugh — Ireland',s:'We Shall Answer Together',r:'europe'},{i:'mercury',n:'Mercury',l:'Mercury — European Union',s:'Carry the Torch',r:'europe'},{i:'odin',n:'Odin',l:'Odin — Germanic / Nordic',s:'Bear the Torch',r:'europe'},{i:'prometheus',n:'Prometheus',l:'Prometheus — Greece',s:'Carry the Torch',r:'europe'},{i:'fuxi',n:'Fuxi',l:'Fuxi — Taiwan',s:'We Shall Do It Ourselves',r:'asia'},{i:'utama',n:'Utama',l:'Sang Nila Utama — Singapore',s:'Cast Our Crown Into the Sea',r:'asia'},{i:'rizal',n:'Rizal',l:'Rizal — Philippines',s:'Cure the Social Cancer',r:'asia'},{i:'tagore',n:'Tagore',l:'Tagore — India',s:'Our Final Refuge is Humanity',r:'asia'},{i:'maui',n:'Māui',l:'Māui — Polynesia / NZ',s:'Our Sovereignty is Righteous',r:'asia'},{i:'liberty',n:'Lady Liberty',l:'Lady Liberty — U.S.A.',s:'Live to Make Man Free',r:'americas'},{i:'garibaldi',n:'Garibaldi',l:'Garibaldi — Chile & Argentina',s:'Learn the Truth',r:'americas'},{i:'bolivar',n:'Bolívar',l:'Bolívar — Colombia, Costa Rica, Panama',s:'Serve the Final Revolution',r:'americas'},{i:'esu',n:'Esu',l:'Esu — Nigeria',s:'The Path is Open',r:'africa-mideast'},{i:'idris',n:'Idris',l:'Idris — Egypt & UAE',s:'Multiply Your Deeds',r:'africa-mideast'},{i:'enoch',n:'Enoch',l:'Enoch — South Africa, Kenya, Jamaica',s:'Stand Up for Your Rights',r:'africa-mideast'},{i:'metatron',n:'Metatron',l:'Metatron — Israel',s:'Love Your Neighbor as Yourself',r:'africa-mideast'}];
+const pf=document.getElementById('pf');P.forEach(p=>{pf.innerHTML+=`<div class="pi"><h4>${p.n}</h4><input id="p-${p.i}-l" value="${p.l}"><input id="p-${p.i}-s" value="${p.s}"><input id="p-${p.i}-r" value="${p.r}"></div>`;});
+function show(id,b){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('on'));document.getElementById('s-'+id).classList.add('on');b.classList.add('on');}
+function flash(m){const e=document.getElementById('sm');e.textContent=m;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),3000);}
+function $(id){return document.getElementById(id).value;}
+function nl(t){return t.replace(/\n\n/g,'</p><p>');}
+function saveDraft(){const d={};document.querySelectorAll('input,textarea').forEach(e=>{if(e.id)d[e.id]=e.value;});try{localStorage.setItem('votl',JSON.stringify(d));flash('Draft saved!');}catch(e){flash('Failed');}}
+function loadDraft(){try{const d=JSON.parse(localStorage.getItem('votl')||'{}');Object.keys(d).forEach(id=>{const e=document.getElementById(id);if(e)e.value=d[id];});}catch(e){}}
+function gp(){return P.map(p=>({i:p.i,l:$('p-'+p.i+'-l'),s:$('p-'+p.i+'-s'),r:$('p-'+p.i+'-r')}));}
+function gw(){return[{t:$('f-w1t'),s:$('f-w1s'),d:$('f-w1d')},{t:$('f-w2t'),s:$('f-w2s'),d:$('f-w2d')},{t:$('f-w3t'),s:$('f-w3s'),d:$('f-w3d')}];}
+function wc(w){const d=w.d?`<p>${w.d}</p>`:'<p style="font-style:italic;color:var(--typewriter)">Details forthcoming.</p>';return`<div class="work-card"><h4>${w.t}</h4><span class="work-status">${w.s}</span>${d}</div>`;}
+function nav(a,ip){const h=a==='index'?'index.html':'../index.html',pp=a==='index'?'pages/':'';return`<nav><div class="nav-inner"><a href="${h}" class="nav-logo"><img src="${ip}images/logo-official.jpg" alt="${$('f-title')}"><span>${$('f-title')}</span></a><div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div><ul class="nav-links"><li><a href="${h}">Home</a></li><li><a href="${pp}works.html">Works</a></li><li><a href="${pp}gallery.html">Promotions</a></li><li><a href="${pp}about.html">About</a></li><li><a href="${pp}contact.html">Contact</a></li></ul></div></nav>`;}
+function foot(ip){return`<footer><img src="${ip}images/logo-official.jpg" alt="${$('f-title')}" class="footer-logo"><p class="footer-name">${$('f-title')} ${$('f-sub')}</p><p class="footer-motto">${$('f-motto')}</p></footer>`;}
+function hd(t,css){return`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>${t} — ${$('f-title')}</title><link rel="stylesheet" href="${css}"></head><body>`;}
+function lb(extra){return`<div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close">&times;</button><img src="" alt="" id="lightbox-img"></div><`+`script>function openLightbox(el){var i=el.querySelector('img');document.getElementById('lightbox-img').src=i.src;document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';}function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});${extra||''}<`+`/script>`;}
+
+function bIndex(){let pg='';gp().slice(0,8).forEach(p=>{pg+=`<div class="gallery-item" data-region="${p.r}" onclick="openLightbox(this)"><img src="images/gallery/${p.i}.png" alt="${p.l}" loading="lazy"><div class="poster-label">${p.l}</div></div>`;});let wk='';gw().forEach(w=>{wk+=wc(w);});return`${hd($('f-sub'),'css/style.css')}${nav('index','')}
+<section class="hero"><img src="images/logo-official.jpg" alt="${$('f-title')}" class="hero-logo"><h1 class="hero-title">${$('f-title')}</h1><p class="hero-subtitle">${$('f-sub')}</p><div class="hero-rule"></div><p class="hero-mission">${$('f-m1')}<br><br>${$('f-m2')}</p><p class="hero-motto">${$('f-motto')}</p></section>
+<section class="works-section"><div class="section-header"><h2>Works</h2><div class="rule"></div><p>Publications from the threshold</p></div><div class="broadsheet-border"><div class="work-featured"><img src="images/maxima-carta-cover-1.png" alt="Maxima Carta" class="work-featured-image"><div class="work-featured-content"><h3>Maxima Carta</h3><span class="work-type">${$('f-mcs')}</span><p style="font-style:italic;font-size:17px;color:var(--typewriter)">${$('f-mcp')}</p><p>${$('f-mcd')}</p><p style="font-size:13px;color:var(--typewriter);margin-top:15px">ISBN: ${$('f-isbn')} · ${$('f-lic')}</p><a href="pages/works.html" style="display:inline-block;margin-top:20px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--cream);background:var(--black);border:1px solid var(--red-stamp);padding:12px 30px;text-decoration:none">Read More</a></div></div></div><div style="max-width:1000px;margin:60px auto 0"><h3 style="font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--typewriter);text-align:center;margin-bottom:30px">Forthcoming Works</h3><div class="work-preview">${wk}</div></div></section>
+<section class="gallery-section"><div class="section-header"><h2>Promotions</h2><div class="rule"></div></div><div class="gallery-grid">${pg}</div><div style="text-align:center;margin-top:40px"><a href="pages/gallery.html" style="font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--manila);border:1px solid var(--manila-dark);padding:12px 35px;text-decoration:none">View Complete Collection</a></div></section>
+<section class="about-section"><div class="section-header"><h2>The School of Tactical Egalitarianism</h2><div class="rule"></div></div><div class="broadsheet-border"><div class="about-content"><p>${nl($('f-lim'))}</p><blockquote>${$('f-quote')}</blockquote><p>${nl($('f-te'))}</p><p class="founder-sig">${$('f-sig')}</p></div></div></section>
+${foot('')}${lb("window.addEventListener('scroll',function(){document.querySelector('nav').style.boxShadow=window.scrollY>100?'0 4px 20px rgba(0,0,0,0.5)':'none';});")}
+</body></html>`;}
+
+function bGallery(){let pg='';gp().forEach(p=>{pg+=`<div class="gallery-item" data-region="${p.r}" onclick="openLightbox(this)"><img src="../images/gallery/${p.i}.png" alt="${p.l}" loading="lazy"><div class="poster-label">${p.l}<br><small>${p.s}</small></div></div>`;});return`${hd('Promotions','../css/style.css')}${nav('gallery','../')}
+<section class="gallery-section" style="padding-top:140px"><div class="section-header"><h2>Promotions</h2><div class="rule"></div></div><div class="gallery-filters"><button class="active" onclick="filterGallery('all',this)">All</button><button onclick="filterGallery('commonwealth',this)">Commonwealth</button><button onclick="filterGallery('europe',this)">Europe</button><button onclick="filterGallery('asia',this)">Asia-Pacific</button><button onclick="filterGallery('americas',this)">Americas</button><button onclick="filterGallery('africa-mideast',this)">Africa & Middle East</button></div><div class="gallery-grid">${pg}</div></section>
+${foot('../')}${lb("function filterGallery(r,btn){document.querySelectorAll('.gallery-filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.gallery-item').forEach(i=>{i.style.display=(r==='all'||i.dataset.region===r)?'':'none';});}")}
+</body></html>`;}
+
+function bWorks(){let wk='';gw().forEach(w=>{wk+=wc(w);});return`${hd('Works','../css/style.css')}${nav('works','../')}
+<section class="works-section" style="padding-top:140px;min-height:100vh"><div class="section-header"><h2>Works</h2><div class="rule"></div><p>Publications from the threshold</p></div><div class="broadsheet-border" style="margin-bottom:60px"><div style="text-align:center;margin-bottom:30px"><span style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--red-stamp);border:1px solid var(--red-stamp);padding:5px 18px">Flagship Publication</span></div><div class="work-featured"><img src="../images/maxima-carta-cover-1.png" alt="Maxima Carta" class="work-featured-image"><div class="work-featured-content"><h3>Maxima Carta</h3><span class="work-type">${$('f-mcs')}</span><p style="font-style:italic;color:var(--typewriter)">${$('f-mcp')}</p><p>${$('f-mcd')}</p><p>Compiled by ${$('f-comp')}. Published by ${$('f-title')} ${$('f-sub')}, ${$('f-addr')}.</p><div style="margin-top:20px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:2px;color:var(--typewriter)"><p>ISBN: ${$('f-isbn')}</p><p>Licensed under Creative Commons ${$('f-lic')}</p></div><div style="border-top:1px solid var(--manila-dark);margin-top:20px;padding-top:20px"><a href="${$('f-pat')}" target="_blank" style="display:inline-block;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--cream);background:var(--black);border:1px solid var(--red-stamp);padding:12px 30px;text-decoration:none">Support on Patreon</a></div></div></div></div><div style="max-width:1000px;margin:0 auto"><h3 style="font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--typewriter);text-align:center;margin-bottom:30px">Other Works</h3><div class="work-preview">${wk}</div></div></section>
+${foot('../')}</body></html>`;}
+
+function bAbout(){return`${hd('About','../css/style.css')}${nav('about','../')}
+<section class="about-section" style="padding-top:140px;min-height:100vh"><div class="section-header"><h2>About the House</h2><div class="rule"></div><p>The School of Tactical Egalitarianism</p></div><div class="broadsheet-border"><div class="about-content"><h3>The Limen</h3><p>${nl($('f-lim'))}</p><blockquote>${$('f-quote')}</blockquote><h3>The Mission</h3><p>${$('f-m1')}</p><p>${$('f-m2')}</p><h3>Tactical Egalitarianism</h3><p>${nl($('f-te'))}</p><h3>The United Commonwealth</h3><p>${nl($('f-uc'))}</p><div style="text-align:center;margin-top:40px"><img src="../images/logo-official.jpg" alt="${$('f-title')}" style="height:80px;opacity:.5"></div><p class="founder-sig">${$('f-motto')}<br><em>${$('f-mt')}</em></p></div></div></section>
+${foot('../')}</body></html>`;}
+
+function bContact(){let ex='';if($('f-l1n')&&$('f-l1u'))ex+=`<a href="${$('f-l1u')}" target="_blank">${$('f-l1n')}</a>`;if($('f-l2n')&&$('f-l2u'))ex+=`<a href="${$('f-l2u')}" target="_blank">${$('f-l2n')}</a>`;return`${hd('Contact','../css/style.css')}${nav('contact','../')}
+<section class="contact-section" style="padding-top:140px;min-height:100vh"><div class="section-header"><h2>Contact</h2><div class="rule"></div><p>Cross the threshold</p></div><div class="broadsheet-border" style="max-width:700px"><div class="contact-content"><p>${nl($('f-ci'))}</p><div style="width:60px;height:2px;background:var(--red-stamp);margin:35px auto"></div><div class="contact-links"><a href="${$('f-pat')}" target="_blank">Support on Patreon</a>${ex}</div><div style="margin-top:50px;text-align:center"><img src="../images/logo-official.jpg" alt="" style="height:70px;opacity:.4"><p style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--typewriter);margin-top:15px;opacity:.5">${$('f-motto')}</p></div></div></div></section>
+${foot('../')}</body></html>`;}
+
+async function downloadSite(){
+flash('Building...');
+const z=new JSZip();
+z.file('index.html',bIndex());
+z.file('pages/works.html',bWorks());
+z.file('pages/gallery.html',bGallery());
+z.file('pages/about.html',bAbout());
+z.file('pages/contact.html',bContact());
+const b=await z.generateAsync({type:'blob'});
+const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='votl-updated-pages.zip';a.click();
+flash('Downloaded! Unzip and replace your HTML files (keep images & css folders).');
+}
+loadDraft();
+</script>
+</body></html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voices of The Limen — Casa Editorial</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="../images/logo-transparent.png" alt="Voices of The Limen">
+        <span>Voices of The Limen</span>
+      </a>
+      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-dropdown"><a href="pages/works.html">Obras</a></li>
+        <li><a href="pages/gallery.html">Promociones</a></li>
+        <li><a href="pages/about.html">Acerca de</a></li>
+        <li><a href="pages/contact.html">Contacto</a></li>
+        <li><select onchange="window.location.href=this.value" style="font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: transparent; color: var(--manila-light); border: 1px solid var(--manila-dark); padding: 5px 10px; cursor: pointer; -webkit-appearance: none;">
+              <option value="../index.html">EN</option><option value="../fr/index.html">Fra</option><option value="../es/index.html" selected>Esp</option><option value="../ja/index.html">日本</option><option value="../ko/index.html">한국</option><option value="../hi/index.html">हिन</option><option value="../ar/index.html">الع</option>
+            </select></li>
+      <li><a href="https://www.patreon.com/UnitedCommonWealth" target="_blank" class="nav-cta">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <img src="../images/logo-transparent.png" alt="Voices of The Limen" class="hero-logo">
+    <h1 class="hero-title">Voices of The Limen</h1>
+    <p class="hero-subtitle">Casa Editorial</p>
+    <div class="hero-rule"></div>
+    <p class="hero-mission">La misión de esta casa editorial independiente es proporcionar una plataforma para publicaciones, mensajería estratégica y voces protegidas para la promoción de los contribuyentes y sus instituciones en apoyo de los que de otro modo no tendrían voz.<br><br>Fundada sobre el principio de que las ideas creíbles tienen derecho de paso a través del limen, el trabajo de esta casa se sitúa en la encrucijada de la democracia global para promover un mundo libre y sus intereses.</p>
+    <p class="hero-motto">PRO TE PRO NOBIS OMNIBUS</p>
+  </section>
+
+  <section class="works-section">
+    <div class="section-header">
+      <h2>Obras</h2>
+      <div class="rule"></div>
+      <p>Publicaciones desde el umbral</p>
+    </div>
+    <div class="broadsheet-border">
+      <div class="work-featured">
+        <img src="../images/maxima-carta-cover-1.png" alt="Maxima Carta" class="work-featured-image">
+        <div class="work-featured-content">
+          <h3>Maxima Carta</h3>
+          <span class="work-type">La Mancomunidad Unida de la Tierra</span>
+          <p style="font-style: italic; font-size: 17px; color: var(--typewriter);">Nosotros, los Pueblos de la Tierra, portadores de la antorcha del conocimiento, las obras y las vidas de todos los que nos precedieron, ordenamos y consagramos esta Maxima Carta — para que toda la humanidad pueda vivir en paz, dignidad y prosperidad por todos los tiempos.</p>
+          <p>El modelo constitucional de código abierto que establece los derechos, las autoridades gubernamentales, el aparato militar, el sistema monetario y las instituciones culturales de la Mancomunidad Unida de la Tierra.</p>
+          <a href="pages/works.html" style="display: inline-block; margin-top: 20px; font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--cream); background: var(--black); border: 1px solid var(--red-stamp); padding: 12px 30px; text-decoration: none;">Leer Más</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1000px; margin: 60px auto 0;">
+      <h3 style="font-family: 'Oswald', sans-serif; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: var(--typewriter); text-align: center; margin-bottom: 30px;">Obras Próximas</h3>
+      <div class="work-preview">
+        <div class="work-card">
+          <h4>A New Common Wealth</h4>
+          <span class="work-status">Diciembre 2026</span>
+          <p style="font-style: italic; color: var(--typewriter);">Obras Próximas</p>
+        </div>
+        <div class="work-card">
+          <h4>The Voices of Everyman</h4>
+          <span class="work-status">2028 — Biografía Colectiva</span>
+          <p>Conozca al compilador y las voces detrás del proyecto United CommonWealth.</p>
+        </div>
+        <div class="work-card">
+          <h4>Tactical Egalitarianism</h4>
+          <span class="work-status">Teoría Política</span>
+          <p>La teoría política fundacional de la casa editorial — que la sociedad funciona de manera óptima cuando los individuos se ven a sí mismos como partes interesadas iguales dentro de un sistema.</p>
+        </div>
+        <div class="work-card">
+          <h4>The Cries of Our Peoples</h4>
+          <span class="work-status">2027</span>
+          <p style="font-style: italic; color: var(--typewriter);">Obras Próximas</p>
+        </div>
+        <div class="work-card">
+          <h4>The Voices of Everyman</h4>
+          <span class="work-status">2028 — Biografía Colectiva</span>
+          <p>Conozca al compilador y las voces detrás del proyecto United CommonWealth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="section-header">
+      <h2>Promociones</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-region="commonwealth" onclick="openLightbox(this)">
+        <img src="../images/gallery/merlin.png" alt="Merlin — Commonwealth" loading="lazy">
+        <div class="poster-label">Merlin — Commonwealth</div>
+      </div>
+      <div class="gallery-item" data-region="europe" onclick="openLightbox(this)">
+        <img src="../images/gallery/lugh.png" alt="Lugh — Ireland" loading="lazy">
+        <div class="poster-label">Lugh — Ireland</div>
+      </div>
+      <div class="gallery-item" data-region="europe" onclick="openLightbox(this)">
+        <img src="../images/gallery/mercury.png" alt="Mercury — European Union" loading="lazy">
+        <div class="poster-label">Mercury — European Union</div>
+      </div>
+      <div class="gallery-item" data-region="europe" onclick="openLightbox(this)">
+        <img src="../images/gallery/odin.png" alt="Odin — Germanic / Nordic" loading="lazy">
+        <div class="poster-label">Odin — Germanic / Nordic</div>
+      </div>
+      <div class="gallery-item" data-region="europe" onclick="openLightbox(this)">
+        <img src="../images/gallery/prometheus.png" alt="Prometheus — Greece" loading="lazy">
+        <div class="poster-label">Prometheus — Greece</div>
+      </div>
+      <div class="gallery-item" data-region="asia" onclick="openLightbox(this)">
+        <img src="../images/gallery/fuxi.png" alt="Fuxi — Taiwan" loading="lazy">
+        <div class="poster-label">Fuxi — Taiwan</div>
+      </div>
+      <div class="gallery-item" data-region="asia" onclick="openLightbox(this)">
+        <img src="../images/gallery/utama.png" alt="Sang Nila Utama — Singapore" loading="lazy">
+        <div class="poster-label">Sang Nila Utama — Singapore</div>
+      </div>
+      <div class="gallery-item" data-region="asia" onclick="openLightbox(this)">
+        <img src="../images/gallery/rizal.png" alt="Rizal — Philippines" loading="lazy">
+        <div class="poster-label">Rizal — Philippines</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="pages/gallery.html" style="font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--manila); border: 1px solid var(--manila-dark); padding: 12px 35px; text-decoration: none;">Ver Colección Completa</a>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="section-header">
+      <h2>El Igualitarismo Táctico</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="broadsheet-border">
+      <div class="about-content">
+        <p>En la arquitectura y religión romanas, el limen era el umbral — la piedra de demarcación de la puerta, sagrada para el dios Jano. Cruzar el limen era pasar de un mundo a otro: de lo privado a lo público, de lo conocido a lo desconocido, del silencio a la palabra.</p>
+        <p>Voices of the Limen toma su nombre de este concepto antiguo. Somos una casa editorial que existe en el umbral — el punto de cruce donde las ideas que merecen ser escuchadas encuentran su paso hacia el mundo.</p>
+        <blockquote>Las ideas creíbles tienen derecho de paso a través del limen.</blockquote>
+        <p>La Escuela del Igualitarismo Táctico sostiene que la sociedad funciona de manera óptima cuando cada individuo se ve a sí mismo como un actor igual en el sistema que habita. Esto no es un ideal utópico — es un marco estratégico.</p>
+        <p>Igualdad de posición, igualdad de voz, igualdad del derecho a dar forma al mundo. No impuesta desde arriba sino reconocida desde dentro.</p>
+        <p class="founder-sig">— Everyman of Sherwood, Founder of Voices of The Limen Publishing House</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="../images/logo-transparent.png" alt="Voices of The Limen" class="footer-logo">
+    <p class="footer-name">Voices of The Limen Casa Editorial</p>
+    <p class="footer-motto">PRO TE PRO NOBIS OMNIBUS</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="" id="lightbox-img">
+    <a href="" download class="lightbox-download" id="lightbox-dl" onclick="event.stopPropagation()">&#8681; Free Download</a>
+  </div>
+  <script>
+    function openLightbox(el) { const img = el.querySelector('img'); document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-dl').href = img.src; document.getElementById('lightbox').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeLightbox(e) { if (e && (e.target.classList.contains('lightbox-download') || e.target.closest('.lightbox-download'))) return; document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>

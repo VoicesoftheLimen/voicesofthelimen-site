@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Voices of The Limen</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../../images/logo-transparent.png" alt="Voices of The Limen">
+        <span>Voices of The Limen</span>
+      </a>
+      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li class="nav-dropdown"><a href="works.html">Œuvres</a></li>
+        <li><a href="gallery.html">Promotions</a></li>
+        <li><a href="about.html">À Propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><select onchange="window.location.href=this.value" style="font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: transparent; color: var(--manila-light); border: 1px solid var(--manila-dark); padding: 5px 10px; cursor: pointer; -webkit-appearance: none;">
+              <option value="../../pages/contact.html">EN</option><option value="../../fr/pages/contact.html" selected>Fra</option><option value="../../es/pages/contact.html">Esp</option><option value="../../ja/pages/contact.html">日本</option><option value="../../ko/pages/contact.html">한국</option><option value="../../hi/pages/contact.html">हिन</option><option value="../../ar/pages/contact.html">الع</option>
+            </select></li>
+      <li><a href="https://www.patreon.com/UnitedCommonWealth" target="_blank" class="nav-cta">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="contact-section" style="padding-top: 140px; min-height: 100vh;">
+    <div class="section-header">
+      <h2>Contact</h2>
+      <div class="rule"></div>
+      <p>Franchir le seuil</p>
+    </div>
+    <div class="broadsheet-border" style="max-width: 700px;">
+      <div class="contact-content">
+        <p>Cette Maison d'Édition accueille les voix des contributeurs, collaborateurs, institutions et individus qui veulent être entendus.</p>
+        <p>Si vous croyez que votre voix appartient au carrefour de la démocratie mondiale, nous vous invitons à nous contacter.</p>
+        <div style="width: 60px; height: 2px; background: var(--red-stamp); margin: 35px auto;"></div>
+        <div class="contact-links">
+          <a href="https://www.patreon.com/UnitedCommonWealth" target="_blank">Soutenir sur Patreon</a>
+        </div>
+        <div style="margin-top: 50px; text-align: center;">
+          <img src="../../images/logo-transparent.png" alt="" style="height: 70px; opacity: 0.4;">
+          <p style="font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--typewriter); margin-top: 15px; opacity: 0.5;">PRO TE PRO NOBIS OMNIBUS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <img src="../../images/logo-transparent.png" alt="Voices of The Limen" class="footer-logo">
+    <p class="footer-name">Voices of The Limen Maison d'Édition</p>
+    <p class="footer-motto">PRO TE PRO NOBIS OMNIBUS</p>
+  </footer>
+</body>
+</html>

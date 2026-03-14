@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>작품 — Voices of The Limen</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../../images/logo-transparent.png" alt="Voices of The Limen">
+        <span>Voices of The Limen</span>
+      </a>
+      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">홈</a></li>
+        <li class="nav-dropdown"><a href="works.html">작품</a></li>
+        <li><a href="gallery.html">프로모션</a></li>
+        <li><a href="about.html">소개</a></li>
+        <li><a href="contact.html">연락처</a></li>
+        <li><select onchange="window.location.href=this.value" style="font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: transparent; color: var(--manila-light); border: 1px solid var(--manila-dark); padding: 5px 10px; cursor: pointer; -webkit-appearance: none;">
+              <option value="../../pages/works.html">EN</option><option value="../../fr/pages/works.html">Fra</option><option value="../../es/pages/works.html">Esp</option><option value="../../ja/pages/works.html">日本</option><option value="../../ko/pages/works.html" selected>한국</option><option value="../../hi/pages/works.html">हिन</option><option value="../../ar/pages/works.html">الع</option>
+            </select></li>
+      <li><a href="https://www.patreon.com/UnitedCommonWealth" target="_blank" class="nav-cta">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="works-section" style="padding-top: 140px; min-height: 100vh;">
+    <div class="section-header">
+      <h2>작품</h2>
+      <div class="rule"></div>
+      <p>경계로부터의 출판물</p>
+    </div>
+    <div class="broadsheet-border" style="margin-bottom: 60px;">
+      <div style="text-align: center; margin-bottom: 30px;"><span style="font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--red-stamp); border: 1px solid var(--red-stamp); padding: 5px 18px;">대표 출판물</span></div>
+      <div class="work-featured">
+        <img src="../../images/maxima-carta-cover-1.png" alt="막시마 카르타" class="work-featured-image">
+        <div class="work-featured-content">
+          <h3>막시마 카르타</h3>
+          <span class="work-type">지구 연합 연방</span>
+          <p style="font-style: italic; color: var(--typewriter);">우리 지구의 인민들, 우리 앞에 온 모든 이들의 지식, 행위, 삶의 횃불을 든 자들은 이 막시마 카르타를 제정하고 봉헌한다 — 모든 인류가 영원히 평화, 존엄, 번영 속에 살 수 있도록.</p>
+          <p>지구 연합 연방의 권리, 통치 기관, 군사 기구, 통화 체계, 문화 기관을 확립하는 오픈소스 헌법 모델.</p>
+          <div style="border-top: 1px solid var(--manila-dark); margin-top: 20px; padding-top: 20px;">
+            <a href="https://www.patreon.com/UnitedCommonWealth" target="_blank" style="display: inline-block; font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--cream); background: var(--black); border: 1px solid var(--red-stamp); padding: 12px 30px; text-decoration: none;">Patreon에서 지원하기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h3 style="font-family: 'Oswald', sans-serif; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: var(--typewriter); text-align: center; margin-bottom: 30px;">기타 작품</h3>
+      <div class="work-preview">
+        <div class="work-card"><h4>A New Common Wealth</h4><span class="work-status">2026년 12월</span><p style="font-style: italic; color: var(--typewriter);">—</p></div>
+        <div class="work-card"><h4>Tactical Egalitarianism</h4><span class="work-status">정치 이론</span><p>출판사의 기본 정치 이론 — 개인이 시스템 내에서 동등한 이해관계자로 자신을 인식할 때 사회는 최적으로 기능한다.</p></div>
+        <div class="work-card"><h4>The Cries of Our Peoples</h4><span class="work-status">2027년</span><p style="font-style: italic; color: var(--typewriter);">—</p></div><div class="work-card"><h4>The Voices of Everyman</h4><span class="work-status">2028년 — 집단 전기</span><p>United CommonWealth 프로젝트의 편찬자와 목소리를 만나보세요. 이 집단 전기에서 그 형성적 사상가들의 역사가 밝혀집니다.</p></div></div>
+    </div>
+  </section>
+  <footer>
+    <img src="../../images/logo-transparent.png" alt="Voices of The Limen" class="footer-logo">
+    <p class="footer-name">Voices of The Limen 출판사</p>
+    <p class="footer-motto">PRO TE PRO NOBIS OMNIBUS</p>
+  </footer>
+</body>
+</html>
